@@ -200,6 +200,97 @@
 					"src": "$applicationRoot/components/tour/take-a-tour.svg"
 				}
 			]
-		}
+		},
+		"symphony": {
+			"appId": "symphony",
+			"name": "Symphony by adapter",
+			"description": "Symphony by adapter",
+			"manifest": {
+				"foreign": {
+					"components": {
+						"App Launcher": {
+							"launchableByUser": false
+						},
+						"Toolbar": {
+							"iconURL": "https://assets.finsemble.com/components/fdc3-workbench/fdc3-icon-256.png"
+						},
+						"Window Manager": {
+							"FSBLHeader": false,
+							"persistWindowState": false
+						}
+					}
+				},
+				"interop": {}
+			},
+			"version": "1.0.0",
+			"tooltip": "FDC3 Test App",
+			"images": [
+				{
+					"url": "https://assets.finsemble.com/components/fdc3-workbench/fdc3-icon-256.png",
+					"tooltip": "FDC3 logo"
+				}
+			],
+			"tags": ["fdc3", "interop", "interoperabilty", "developer tool"],
+			"publisher": "Symphony",
+			"icons": [
+				{
+					"url": "https://assets.finsemble.com/components/fdc3-workbench/fdc3-icon-256.png"
+				}
+			],
+			"intents": [
+				{
+					"name": "StartChat",
+					"displayName": "Start Chat",
+					"contexts": ["fdc3.chat.initSettings"]
+				}
+			]
+		},
+		"Start Chat Demo": {
+			"name": "Start Chat Demo",
+			"appId": "Symphony Start Chat",
+			"description": "Allows to test start chat feature",
+			"manifest": {
+			  "window": {
+				"url": "https://staging-3.demo.chartiq.com/innovate/v3/technical-analysis-chart.html",
+				"width": 480,
+				"height": 800,
+				"options": {
+				  "minWidth": 75
+				}
+			  },
+			  "foreign": {
+				"components": {
+				  "App Launcher": {
+					"launchableByUser": true
+				  },
+				  "Window Manager": {
+					"FSBLHeader": true,
+					"persistWindowState": true
+				  }
+				}
+			  }
+			},
+			"version": "1.0.0",
+			"tooltip": "Demo app to start chat",
+			"images": [
+			  {}
+			],
+			"tags": [],
+			"contactEmail": "",
+			"supportEmail": "",
+			"publisher": "Symphony",
+			"icons": [
+			  {
+				"url": ""
+			  }
+			],
+			"intents": [
+				{
+				"name": "ViewChart",
+				"displayName": "View Chart",
+				"contexts": ["fdc3.instrument"]
+				}
+			]
+		  }
 	}
 }
