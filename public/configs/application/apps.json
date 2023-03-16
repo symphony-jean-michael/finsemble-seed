@@ -42,6 +42,10 @@
 							{
 								"contextType": "fdc3.instrument",
 								"cc": "#Workspace"
+							},
+              {
+								"contextType": "fdc3.chart",
+								"cc": "#Workspace"
 							}
 						]
 					}
@@ -63,7 +67,7 @@
 					"listensFor": {
 						"ViewChart": {
 							"displayName": "View Chart",
-							"contexts": ["fdc3.instrument"]
+							"contexts": ["fdc3.instrument", "fdc3.chart"]
 						}
 					}
 				}
@@ -270,6 +274,76 @@
 					"src": "$moduleRoot/ui-components/Tour/take-a-tour.svg"
 				}
 			]
+		},
+    {
+			"appId": "symphony",
+			"name": "Symphony",
+			"type": "web",
+			"details": {
+				"url": "https://st3.symphony.com/apps/client2?embed=true"
+			},
+      "interop": {
+        "intents": {
+          "listensFor": {
+            "StartChat": {
+              "contexts": ["fdc3.chat.initSettings"]
+            },
+            "SendChatMessage": {
+              "contexts": ["fdc3.chat.message"]
+            },
+            "ViewChat": {
+              "contexts": ["fdc3.chat.room", "fdc3.contact", "fdc3.contactList"]
+            },
+            "ViewMessages": {
+               "contexts": ["fdc3.searchCriteria", "fdc3.chat.searchCriteria"]
+            }
+          },
+          "raises": {
+            "ViewInstrument":  ["fdc3.instrument"],
+            "ViewContact":  ["fdc3.contact"],
+            "CreateInteraction":  ["fdc3.interaction"]
+          }
+        }
+      },
+      "hostManifests": {
+				"Finsemble": {
+					"window": {
+						"width": 900,
+						"height": 750,
+						"options": {
+							"minWidth": 175
+						}
+					},
+					"foreign": {
+						"components": {
+							"App Launcher": { "launchableByUser": true },
+							"Window Manager": { "FSBLHeader": true, "persistWindowState": true }
+						}
+					},
+          "interop": {
+            "selectConnect": [{
+              "autoAssociate": {
+                "allChildren": true
+              }
+            }]
+          }
+				}
+			}
+    },
+    {
+			"appId": "cleverdeal",
+			"name": "Clever deal",
+			"type": "web",
+			"details": {
+				"url": "http://localhost:3000/"
+			},
+      "interop": {
+        "intents": {
+          "raises": {
+            "ViewChat":  ["fdc3.chat.room"]
+          }
+        }
+      }
 		}
 	]
 }
