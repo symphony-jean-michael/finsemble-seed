@@ -280,7 +280,7 @@
 			"name": "Symphony",
 			"type": "web",
 			"details": {
-				"url": "https://st3.symphony.com/apps/client2?embed=true"
+				"url": "https://corporate.symphony.com/apps/client2?embed=true&mode=dark"
 			},
       "interop": {
         "intents": {
